@@ -34,5 +34,20 @@ Then select Active users
 🔹 Step 3: Add a New User
 Click the “+ Add a user” button near the top
 
+*) User#1 Details:
+Display name: test azure1 test cs lab1
+Username: testazure1@shahriar143.onmicrosoft.com
+Password: T@156391870381ot
 
+*) User#2 Details:
+Display name: test azure2 test cs lab2
+Username: testazure2@shahriar143.onmicrosoft.com
+Password: L@262593636003un 
+
+*) User#1 Details:
+Display name: test azure3 test cs lab3
+Username: testazure3@shahriar143.onmicrosoft.com
+Password: F)261131708032ar
+
+![alt text](image.png)
 
