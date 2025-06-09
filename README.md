@@ -10,3 +10,13 @@ Learn core cybersecurity skills using **Microsoft 365 Defender**, **Azure IAM**,
 - Azure AD Free Tier
 - Microsoft Sentinel (free log ingestion)
 - Compliance Center
+
+
+# SetUp MS 365 Defender
+1)Microsoft 365 Defender
+2)25 dummy users
+![image](https://github.com/user-attachments/assets/890609df-da19-4927-a1bf-08f799c17510)
+
+
+
+
