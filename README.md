@@ -181,9 +181,9 @@ Click the phishing link
 🔹 Step 2: Go Back to Admin Dashboard and Track
 Go to: https://security.microsoft.com/attacksimulator
 
-Click on your campaign name (e.g., Phishing Test 1)
+Click on your campaign name ( Phishing )
 
-You’ll see:
+We’ll see:
 
 ✅ Who clicked the link
 
@@ -192,6 +192,9 @@ You’ll see:
 ✅ Whether Microsoft Defender detected the attack
 
 ✅ If auto-remediation actions (like email removal) were taken
+
+
+![image](https://github.com/user-attachments/assets/ae842ae5-6672-4783-a16f-84cfc28914b4)
 
 
 
