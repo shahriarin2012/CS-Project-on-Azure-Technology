@@ -44,10 +44,20 @@ Display name: test azure2 test cs lab2
 Username: testazure2@shahriar143.onmicrosoft.com
 Password: L@262593636003un 
 
-*) User#1 Details:
+*) User#3 Details:
 Display name: test azure3 test cs lab3
 Username: testazure3@shahriar143.onmicrosoft.com
 Password: F)261131708032ar
+
+*)Regular user:
+Username: qatester@cyberlab1234.onmicrosoft.com
+password: *****d!
+
+
+Admin User:
+Display name: admin
+Username: admin@cyberlab1234.onmicrosoft.com
+Password: W(643891120169os
 
 ![alt text](image.png)
 
