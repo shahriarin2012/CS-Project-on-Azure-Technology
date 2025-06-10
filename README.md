@@ -67,5 +67,55 @@ Password: W(643891120169os / ***d!
 
 ![image](https://github.com/user-attachments/assets/7dcc435a-1198-4e57-ab5a-c489b4eef6d1)
 
+In Microsoft Defender’s Attack Simulation Training, "Phishing" is the general category — but when you go into the simulation setup, it offers specific attack techniques that simulate different types of phishing attacks.
+
+🎯 What We are Seeing = Phishing Techniques (Subtypes)
+Here’s what each option means:
+
+Credential Harvest	Sends a fake login page to steal usernames/passwords	✅ Yes	✅ Best option for beginner simulation
+Malware Attachment	Sends a malicious file as an attachment	✅ Yes	Good for advanced cases
+Link in Attachment	Email has an attachment that contains a malicious link	✅ Yes	
+Link to Malware	A link in the email directly downloads malware	✅ Yes	
+Drive-by URL	A link that silently tries to exploit the browser	✅ Yes	
+OAuth Consent Grant	Tricks user into giving access to apps via OAuth	✅ Yes	
+How-to Guide	Just an informational help guide (not a technique)	❌ No	Just for reference
+
+✅ Best Option for My Assignment
+Select:
+🔹 Credential Harvest
+
+Why?
+It simulates a fake login page (like Outlook or Microsoft login)
+
+It's the most common phishing method
+
+Easy to track: users click the link → enter dummy credentials → results show up in your dashboard
+
+📌 What to Do Now:
+Select Credential Harvest
+
+Click Next
+
+Continue the rest of the simulation setup:
+
+Name the simulation
+
+Choose a payload/template (e.g., fake Microsoft login)
+
+Select your test users (like AdeleV, MiriamG)
+
+
+
+# Adding my Target Users
+![image](https://github.com/user-attachments/assets/90c8a6ac-d570-4a5f-aab2-861b4ebb85a0)
+
+
+Now, 
+Assign or skip training
+
+Choose Launch now
+
+Submit
+
 
 
