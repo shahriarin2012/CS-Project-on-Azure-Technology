@@ -24,7 +24,7 @@ We must need Admin Access to your Microsoft 365 tenant.
 🔹 Step 1: Go to Microsoft 365 Admin Center
 Open your browser and go to 👉 https://admin.microsoft.com
 
-Log in using our Admin email and password ( admin@shahriar143.onmicrosoft.com /  Dumo208718)
+Log in using our Admin email and password ( admin@cyberlab1234.onmicrosoft.com /  ****d**!)
 
 🔹 Step 2: Navigate to 'Users'
 In the left-side menu, click on Users
@@ -212,7 +212,7 @@ Setting up a Conditional Access policy (e.g., IP/location restriction)
 🛠️ Prerequisites:
 Before starting, we have to make sure:
 
-We’re signed in as the Global Administrator (the admin account you created earlier — e.g., admin@yourlab1234.onmicrosoft.com)
+We’re signed in as the Global Administrator (the admin account you created earlier — e.g., admin@shahriar143.onmicrosoft.com )
 
 You have access to the Azure Portal: https://portal.azure.com
 
@@ -221,11 +221,42 @@ You have access to the Azure Portal: https://portal.azure.com
 🔹 Step 1: Go to Azure Active Directory
 Open browser and go to 👉 https://portal.azure.com
 
-Sign in with your admin credentials
+Sign in with your admin credentials ( admin@shahriar143.onmicrosoft.com /  Dumo208718)
 
 In the left-side menu, click on “Azure Active Directory”
 
-✅ You're now in the Azure AD control center
+![image](https://github.com/user-attachments/assets/04b4a74c-e443-4449-9fb5-90bc20089383)
+
+
+✅ We're now in the Azure AD control center
+
+
+
+# 🔹 Step 2: Create New Groups
+We will create two groups:
+
+SOC Analyst
+
+IT Admin
+
+🔸 How to Create Each Group:
+In Azure AD, click “Groups”
+
+Click + New group
+
+Now fill in the form:
+
+Field	Value
+Group type	Security
+Group name	SOC Analyst
+Group description	Group for Security Operations Center analysts
+Membership type	Assigned
+Members	Click “No members selected” and choose 1–2 test users (e.g., testazure1)
+
+Click Create
+
+📌 We will repeat these steps again to create the "IT Admin" group.
+
 
 
 
