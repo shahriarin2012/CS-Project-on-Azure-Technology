@@ -24,7 +24,7 @@ We must need Admin Access to your Microsoft 365 tenant.
 🔹 Step 1: Go to Microsoft 365 Admin Center
 Open your browser and go to 👉 https://admin.microsoft.com
 
-Log in using our Admin email and password
+Log in using our Admin email and password ( admin@shahriar143.onmicrosoft.com /  Dumo208718)
 
 🔹 Step 2: Navigate to 'Users'
 In the left-side menu, click on Users
