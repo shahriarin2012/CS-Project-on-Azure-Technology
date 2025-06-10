@@ -111,6 +111,10 @@ Select your test users (like AdeleV, MiriamG)
 
 
 Now, 
+# Select Phishing Landing Page
+![image](https://github.com/user-attachments/assets/410c9314-6bd2-4d7e-ae32-d99c35b92357)
+
+
 Assign or skip training
 
 Choose Launch now
