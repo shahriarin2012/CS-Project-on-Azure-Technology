@@ -360,8 +360,7 @@ Click Create
 
 # ----------------------------------------------
 
-🧪 Example Scenario
-You created:
+🧪 Example Scenario:
 
 Groups:
 
