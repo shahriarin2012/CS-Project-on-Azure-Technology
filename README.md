@@ -36,18 +36,18 @@ Click the “+ Add a user” button near the top
 
 *) User#1 Details:
 Display name: test azure1 test cs lab1
-Username: testazure1@shahriar143.onmicrosoft.com
-Password: T@156391870381ot
+Username: testazure1@cyberlab1234.onmicrosoft.com
+Password: F&443690147500am
 
 *) User#2 Details:
 Display name: test azure2 test cs lab2
-Username: testazure2@shahriar143.onmicrosoft.com
-Password: L@262593636003un 
+Username: testazure2@cyberlab1234.onmicrosoft.com
+Password: P@439209892725am 
 
 *) User#3 Details:
 Display name: test azure3 test cs lab3
-Username: testazure3@shahriar143.onmicrosoft.com
-Password: F)261131708032ar
+Username: testazure3@cyberlab1234.onmicrosoft.com
+Password: R#838964183493an
 
 *)Regular user:
 Username: qatester@cyberlab1234.onmicrosoft.com
