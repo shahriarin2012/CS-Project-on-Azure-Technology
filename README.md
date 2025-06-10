@@ -115,6 +115,13 @@ Now,
 ![image](https://github.com/user-attachments/assets/410c9314-6bd2-4d7e-ae32-d99c35b92357)
 
 
+
+![image](https://github.com/user-attachments/assets/91a761de-c761-46ac-bf66-cb1c40abe016)
+
+
+
+
+
 Assign or skip training
 
 Choose Launch now
