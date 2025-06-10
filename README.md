@@ -196,6 +196,40 @@ We’ll see:
 
 ![image](https://github.com/user-attachments/assets/ae842ae5-6672-4783-a16f-84cfc28914b4)
 
+# ----------------------------------------------------------------------------------------------------
+
+# 4: Configure IAM (Identity and Access Management) with Azure AD Free
+
+🎯 Goal:
+Set up IAM (Identity and Access Management) using Azure Active Directory (Azure AD Free). This includes:
+
+Creating user groups like SOC Analyst and IT Admin
+
+Assigning RBAC (Role-Based Access Control) using built-in roles
+
+Setting up a Conditional Access policy (e.g., IP/location restriction)
+
+🛠️ Prerequisites:
+Before starting, we have to make sure:
+
+We’re signed in as the Global Administrator (the admin account you created earlier — e.g., admin@yourlab1234.onmicrosoft.com)
+
+You have access to the Azure Portal: https://portal.azure.com
+
+
+🧭 Step-by-Step Instructions
+🔹 Step 1: Go to Azure Active Directory
+Open browser and go to 👉 https://portal.azure.com
+
+Sign in with your admin credentials
+
+In the left-side menu, click on “Azure Active Directory”
+
+✅ You're now in the Azure AD control center
+
+
+
+
 
 
 
