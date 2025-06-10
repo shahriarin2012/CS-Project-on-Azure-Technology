@@ -57,7 +57,15 @@ password: *****d!
 Admin User:
 Display name: admin
 Username: admin@cyberlab1234.onmicrosoft.com
-Password: W(643891120169os
+Password: W(643891120169os / ***d!
 
 ![alt text](image.png)
+
+# Launch a Phishing Simulation Campaign
+
+
+
+![image](https://github.com/user-attachments/assets/7dcc435a-1198-4e57-ab5a-c489b4eef6d1)
+
+
 
