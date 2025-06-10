@@ -37,12 +37,12 @@ Click the “+ Add a user” button near the top
 *) User#1 Details:
 Display name: test azure1 test cs lab1
 Username: testazure1@cyberlab1234.onmicrosoft.com
-Password: F&443690147500am
+Password: F&443690147500am/ ****d!
 
 *) User#2 Details:
 Display name: test azure2 test cs lab2
 Username: testazure2@cyberlab1234.onmicrosoft.com
-Password: P@439209892725am 
+Password: P@439209892725am / ****d!
 
 *) User#3 Details:
 Display name: test azure3 test cs lab3
@@ -118,15 +118,84 @@ Now,
 
 ![image](https://github.com/user-attachments/assets/91a761de-c761-46ac-bf66-cb1c40abe016)
 
+![image](https://github.com/user-attachments/assets/c186d4a8-960f-42fd-b277-87706dd00f2c)
+
+![image](https://github.com/user-attachments/assets/bc101b71-cf94-4416-9069-2506fc40aebe)
+
+
+
+# Choose Launch now / Send a test
+
+![image](https://github.com/user-attachments/assets/2cf37fe5-e29b-429c-9ec0-aed202aa9a25)
 
 
 
 
-Assign or skip training
 
-Choose Launch now
+# Now Send test email and login as those test users
 
-Submit
+![image](https://github.com/user-attachments/assets/79e3dd3a-0213-4325-9c02-07b80987c71d)
+
+
+
+# Submit
+
+![image](https://github.com/user-attachments/assets/5cd3fdc2-f6a9-4c2e-84f5-adf9c1eea817)
+
+
+✅ What Happened After Submission
+The phishing simulation is scheduled to:
+
+Start: June 10, 2025, at 2:03 AM
+
+Targets: 3 users
+
+✅ Technique: Credential Harvest
+
+✅ Status: Scheduled
+
+🕒 What Happens Next
+Within a few minutes (or at the scheduled time), each of the target users will receive a phishing email (e.g., a fake Microsoft login or password alert).
+
+👣 What We Should Do Next
+🔹 Step 1: Log in as One of the Test Users 
+Pick one of the test users you targeted. Example:
+
+( logged in as Test Azure1 test CS Lab1)
+
+How to Log In:
+Lets Go to 👉 https://outlook.office.com
+
+Enter the user’s email and password
+
+Open their inbox
+
+Look for the phishing simulation email
+
+Click the phishing link
+
+![image](https://github.com/user-attachments/assets/ab844945-92cb-42d8-a947-affb18732f36)
+
+
+
+🔹 Step 2: Go Back to Admin Dashboard and Track
+Go to: https://security.microsoft.com/attacksimulator
+
+Click on your campaign name (e.g., Phishing Test 1)
+
+You’ll see:
+
+✅ Who clicked the link
+
+✅ Who submitted credentials
+
+✅ Whether Microsoft Defender detected the attack
+
+✅ If auto-remediation actions (like email removal) were taken
+
+
+
+
 
 
 
