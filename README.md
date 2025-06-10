@@ -209,21 +209,23 @@ Assigning RBAC (Role-Based Access Control) using built-in roles
 
 Setting up a Conditional Access policy (e.g., IP/location restriction)
 
+
+
 🛠️ Prerequisites:
 Before starting, we have to make sure:
 
 We’re signed in as the Global Administrator (the admin account you created earlier — e.g., admin@shahriar143.onmicrosoft.com )
 
-You have access to the Azure Portal: https://portal.azure.com
+We have access to the Azure Portal: https://portal.azure.com
 
 
 🧭 Step-by-Step Instructions
 🔹 Step 1: Go to Azure Active Directory
 Open browser and go to 👉 https://portal.azure.com
 
-Sign in with your admin credentials ( admin@shahriar143.onmicrosoft.com /  Dumo208718)
+Sign in with your admin credentials ( admin@shahriar143.onmicrosoft.com /  **** d***!)
 
-In the left-side menu, click on “Azure Active Directory”
+In the left-side menu, click on “Microsoft Entra" --> WHich is new name for Azure Active Directory
 
 ![image](https://github.com/user-attachments/assets/04b4a74c-e443-4449-9fb5-90bc20089383)
 
@@ -253,15 +255,130 @@ Group description	Group for Security Operations Center analysts
 Membership type	Assigned
 Members	Click “No members selected” and choose 1–2 test users (e.g., testazure1)
 
+
 Click Create
+
+
+![image](https://github.com/user-attachments/assets/456169a0-bd84-49b3-9910-80de262424a6)
+
+![image](https://github.com/user-attachments/assets/dda7c9aa-2f62-40d0-a439-f71f8f1a4533)
+
+
+
+
+
 
 📌 We will repeat these steps again to create the "IT Admin" group.
 
 
 
+![image](https://github.com/user-attachments/assets/314d612c-a91f-484a-9b1c-e514ad8252a3)
+
+
+🔹 Step 3: Assign RBAC (Role-Based Access Control) Using Built-in Roles
+✅ Why Built-in Only?
+Azure AD Free doesn’t support custom roles — we can only use built-in roles like:
+
+User Administrator
+
+Security Reader
+
+Global Reader
+
+Intune Administrator
+
+🔸 Assign a Role to a Group
+
+Go back to Azure AD home
+
+Click “Roles and administrators”
+![image](https://github.com/user-attachments/assets/a3ec16e3-d177-4e7c-8d7a-fb115a7873b1)
+
+
+Scroll and choose a role like:
+
+Security Reader → good for SOC Analyst
+
+User Administrator or Intune Administrator → for IT Admin
+
+![image](https://github.com/user-attachments/assets/ad08e1b2-499d-4953-8dc6-25398028deeb)
 
 
 
+
+
+
+Click the role name (e.g., Security Reader)
+
+Click + Add assignments
+![image](https://github.com/user-attachments/assets/23b1b4be-d866-4413-b848-1dbad6f14d6a)
+
+
+In the Add Assignment panel:
+
+Search and select SOC Analyst group
+
+Click Add
+
+📌 Repeat for the IT Admin group using a different role.
+
+
+![image](https://github.com/user-attachments/assets/2339c5a3-f42c-4bfe-ac41-92892631b1ee)
+
+
+🔹 Step 4: Configure Basic Conditional Access Policy (IP/Location Restriction)
+✅ Even though Conditional Access is mostly a Premium P1 feature, you can create 1 basic policy in free tenants for learning/demo purposes.
+
+🔸 How to Create a Basic Policy:
+In Azure AD, go to Security → Conditional Access
+
+Click + New policy
+
+Give it a name: Restrict Sign-in by IP
+
+Under Assignments → Users or workload identities
+
+Click Select users and groups
+
+Select SOC Analyst group
+
+Under Assignments → Conditions → Locations
+
+Enable Configure → Choose Yes
+
+Click Include → Select Any location
+
+Click Exclude → Select Trusted locations or add specific IPs (e.g., 192.168.0.0/24)
+
+Under Access Controls → Grant
+
+Choose Block access OR Require MFA
+
+Click Enable Policy → On
+
+Click Create
+
+# ----------------------------------------------
+
+🧪 Example Scenario
+You created:
+
+Groups:
+
+SOC Analyst → assigned to Security Reader role
+
+IT Admin → assigned to User Administrator role
+
+Conditional Access Policy:
+
+Blocks SOC Analyst users from logging in unless they're from a trusted location/IP
+
+✅ Summary / Conclusion: 
+Task	Completed
+Created SOC Analyst group	✅
+Created IT Admin group	✅
+Assigned built-in roles (RBAC)	✅
+Created conditional access policy	✅
 
 
 
