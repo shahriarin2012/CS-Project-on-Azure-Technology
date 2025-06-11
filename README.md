@@ -270,9 +270,7 @@ Click Create
 
 📌 We will repeat these steps again to create the "IT Admin" group.
 
-
-
-![image](https://github.com/user-attachments/assets/314d612c-a91f-484a-9b1c-e514ad8252a3)
+![image](https://github.com/user-attachments/assets/16f908bb-d3d9-4824-9074-f0d309bbf443)
 
 
 🔹 Step 3: Assign RBAC (Role-Based Access Control) Using Built-in Roles
@@ -299,6 +297,9 @@ Scroll and choose a role like:
 
 Security Reader → good for SOC Analyst
 
+![image](https://github.com/user-attachments/assets/98803c56-ed91-4175-acd7-58fffceab740)
+
+
 User Administrator or Intune Administrator → for IT Admin
 
 ![image](https://github.com/user-attachments/assets/ad08e1b2-499d-4953-8dc6-25398028deeb)
@@ -322,8 +323,10 @@ Click Add
 
 📌 Repeat for the IT Admin group using a different role.
 
+![image](https://github.com/user-attachments/assets/7db4016b-ca59-48a3-ac37-0b28c8b77aaf)
 
-![image](https://github.com/user-attachments/assets/2339c5a3-f42c-4bfe-ac41-92892631b1ee)
+
+
 
 
 🔹 Step 4: Configure Basic Conditional Access Policy (IP/Location Restriction)
@@ -333,16 +336,24 @@ Click Add
 In Azure AD, go to Security → Conditional Access
 
 Click + New policy
+![image](https://github.com/user-attachments/assets/bf1600a3-3881-4a05-bc69-00176e9f2d1f)
+
 
 Give it a name: Restrict Sign-in by IP
+
 
 Under Assignments → Users or workload identities
 
 Click Select users and groups
 
+
 Select SOC Analyst group
 
+![image](https://github.com/user-attachments/assets/e48c5db7-8b8a-4904-8138-5be7c6c5ed72)
+
 Under Assignments → Conditions → Locations
+![image](https://github.com/user-attachments/assets/22187be8-0f46-41ec-a356-3bfb79eed09f)
+
 
 Enable Configure → Choose Yes
 
@@ -356,7 +367,17 @@ Choose Block access OR Require MFA
 
 Click Enable Policy → On
 
+![image](https://github.com/user-attachments/assets/f17e059f-91a5-4e44-bbbf-8af336bee9a7)
+
+System will ask to disable default security - Let's do it 
+
+![image](https://github.com/user-attachments/assets/29d8c60c-2ed8-436d-b828-8fa2f447c3e3)
+
+
 Click Create
+![image](https://github.com/user-attachments/assets/f4effbe3-b4fc-4887-ac7a-d7036fb6e78b)
+
+![image](https://github.com/user-attachments/assets/38d08c78-a20a-48cb-b998-67f91efe17f4)
 
 # ----------------------------------------------
 
