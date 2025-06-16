@@ -667,7 +667,7 @@ Click **Next** through all tabs and finally click **Create**
 ## 🧪 Test Summary
 
 - Created and configured Microsoft Sentinel
-- Connected Microsoft 365 Defender and Azure Activity
+- Connected Microsoft Entra ID  and Azure Activity
 - Built a working alert rule that detects phishing click events from email logs
 
 
