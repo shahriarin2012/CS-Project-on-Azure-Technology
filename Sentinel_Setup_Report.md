@@ -92,5 +92,5 @@ Click **Next** through all tabs and finally click **Create**
 
 ---
 
-> 🧠 This setup helps build your foundation in SIEM. The ingestion is free for specific data sources like Defender and Azure Activity Logs under the free plan.
+> 🧠 This setup helps build THE foundation in SIEM. The ingestion is free for specific data sources like Defender and Azure Activity Logs under the free plan.
 
