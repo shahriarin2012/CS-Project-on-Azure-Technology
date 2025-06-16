@@ -783,11 +783,16 @@ Publish to test users via label policy
 
 ✅ These labels help classify, protect, and control sensitive content.
 
-✅ Summary of Tasks Performed
-Task	Status
+# ✅ Summary of Tasks Performed:
+
+Task	Status:
+
 Checked Compliance Score (56%)	✅
+
 Reviewed top recommendations	✅
+
 Created a custom DLP policy to simulate exfiltration detection	✅
+
 Created and published sensitivity label	✅
 
 
