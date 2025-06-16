@@ -639,107 +639,39 @@ That were delivered
 And clicked by the user (a sign of compromise or risky behavior)
 🎯 Use Case: Alert for “Phishing Click Event”
 
-Now that you’ve got the query, you can:
+Now that you’ve got the query, we can:
 
 Test it in the “Logs” section of Sentinel
 Save it as a Detection Rule or Analytics Rule
 Set it to run every X minutes
 Trigger an alert when results are found
 (Optional) Connect to Playbooks for automated response (e.g., send email, disable user, etc.)
-✅ Summary (For Faculty or Project Report)
+✅ Summary for the query:
 
 "This query is used in Microsoft Sentinel to detect instances where a phishing email was not only received, but also clicked by a user — indicating potential compromise. It filters the EmailEvents log for threat type Phish and a delivery action of Clicked, then displays key details like sender, recipient, and timestamp. This helps security teams prioritize high-risk events and respond quickly."
 
 
+Once you save the query:
+## 🛎️ Set Alert Details:
+- **Alert rule frequency:** Every 5 minutes
+- **Lookup data source:** SentinelWorkspace
 
-✅ Goal
+Click **Next** through all tabs and finally click **Create**
 
-We want to create an alert rule in Microsoft Sentinel using the phishing detection query so that:
-
-When a phishing email is clicked, an alert is triggered.
-You (or your SOC analysts) can view the alert, and optionally assign it, investigate, or respond.
-🔧 Step-by-Step: Create an Alert Rule in Sentinel
-
-🧭 1. Go to Microsoft Sentinel
-
-Open the Azure Portal
-Go to Microsoft Sentinel
-Select your Sentinel Workspace
-📈 2. Go to “Analytics”
-
-In the Sentinel workspace:
-
-In the left menu, click Analytics
-Click + Create > Scheduled query rule
-✍️ 3. Fill in the Rule Details
-
-Rule Details Tab
-
-Name: Phishing Click Event Detection
-Description: "Triggers when a phishing email is clicked by a user."
-Severity: Choose High or Medium
-Tactics: Choose Initial Access or Credential Access
-Click Next
-📄 4. Set Up the Query
-
-Set Rule Logic Tab
-
-Query: Paste your working query:
-kusto
+![image](https://github.com/user-attachments/assets/325c1385-a7ab-4399-a3a9-b74cb053891c)
 
 
-EmailEvents
 
-| where ThreatTypes has "Phish"
+---
 
-| where DeliveryAction == "Clicked"
+## 🧪 Test Summary
 
-| project TimeGenerated, SenderFromAddress, RecipientEmailAddress, Subject, DeliveryAction, ThreatTypes
+- Created and configured Microsoft Sentinel
+- Connected Microsoft 365 Defender and Azure Activity
+- Built a working alert rule that detects phishing click events from email logs
 
-Lookup data from the last: 1 hour (you can change this)
-Run query every: 5 or 10 minutes
-Click Next
-👥 5. Set Alert Thresholds (Optional)
 
-You can choose how many results must match before the alert fires
-For testing, set:
-Trigger alert: When results > 0
-Click Next
-🧑‍💼 6. Set Incident Settings
-
-Check Create incidents from alerts
-Assign incidents to your SOC analyst group (optional)
-Click Next
-⚙️ 7. Actions (Optional)
-
-If you want to send email notifications or trigger playbooks:
-
-Add Automated response or Email action
-Click Next
-✅ 8. Review + Create
-
-Review all settings
-Click Create
-🔍 How to View Alerts
-
-Go back to Microsoft Sentinel > Incidents
-When a phishing-click event is found, it will show up here
-Click the incident to:
-View full details
-Assign to a group (SOC analyst)
-Investigate or respond
-🧪 How to Simulate or Test It
-
-To simulate a click and trigger the alert:
-
-Send a test phishing email to one of your users
-Have them click the link
-If Defender for Office or your connected data source logs it in EmailEvents, Sentinel will alert
-Alternatively:
-
-Use the Log Analytics workspace
-Insert test data manually (for learning purposes)
-📌 Summary for Your Faculty Report
+📌 Summary for the Report
 
 “We created a scheduled analytics rule in Microsoft Sentinel that continuously monitors email activity logs for phishing emails that users have clicked. This helps detect real security incidents and assigns them to our SOC analyst group for investigation. The rule is based on a custom KQL query that filters the EmailEvents table for ‘Phish’ threats and a ‘Clicked’ action, providing actionable alerts for potential user compromise.”
 
