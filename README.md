@@ -401,6 +401,102 @@ Assigned built-in roles (RBAC)	✅
 Created conditional access policy	✅
 
 
+# # Task # 5 :🛡️ Microsoft Sentinel Setup Report – Free Ingestion
+
+## 📘 Overview
+This guide documents how to set up Microsoft Sentinel using the free tier, connect key data sources, and create a basic alert rule. Sentinel enables Security Information and Event Management (SIEM) in the cloud for detecting and responding to threats.
+
+---
+
+## 🧱 Step 1: Create a Log Analytics Workspace
+
+1. Go to 👉 [https://portal.azure.com](https://portal.azure.com)
+2. Search **“Log Analytics workspaces”** in the top search bar.
+3. Click **+ Create**.
+
+![image](https://github.com/user-attachments/assets/33269daf-1ca2-4bce-b088-d5e427362a0f)
+![image](https://github.com/user-attachments/assets/44aa4e50-ccf0-459b-aed3-069c886fd9a1)
+
+
+
+4. Fill the form:
+   - **Subscription:** Select your active subscription
+   - **Resource Group:** Create new (e.g., `SentinelLabRG`)
+   - **Name:** `SentinelWorkspace`
+   - **Region:** Choose closest to you (e.g., East US)
+
+ 5. Click **Review + Create**, then **Create**
+
+![image](https://github.com/user-attachments/assets/8532bdda-79a6-4574-a007-942647553deb)
+
+
+--Click Create and the deployment will begin. Wait till the Deployment is complete.
+
+![image](https://github.com/user-attachments/assets/94da0a07-70dd-4830-b434-8f4092c9090e)
+---
+
+## 🔧 Step 2: Enable Microsoft Sentinel on the Workspace
+
+1. Go back to the main portal dashboard
+2. Search **"Microsoft Sentinel"**
+3. Click **+ Add** → Select the workspace `SentinelWorkspace`
+
+
+
+![image](https://github.com/user-attachments/assets/1076ee99-88aa-4b51-a6fe-14fd3316c27f)
+
+
+4. Click **Add Microsoft Sentinel**
+
+![image](https://github.com/user-attachments/assets/cda55b3a-6755-4a5b-b241-d14c8b2bc3b5)
+
+---
+
+## 🔗 Step 3: Connect Data Sources
+
+### 🔹 a) Connect Microsoft 365 Defender
+
+1. In Sentinel, click **Data connectors**
+
+![image](https://github.com/user-attachments/assets/f949b0ef-a8c5-42d7-9bbe-67fec335dab3)
+
+
+
+2. Search for **“Microsoft 365 Defender”**
+
+![image](https://github.com/user-attachments/assets/24be31d7-975f-44bc-9c6d-e9543f2347b8)
+
+
+![image](https://github.com/user-attachments/assets/6085fafc-6f02-44a1-954a-6d7d39c9c9d7)
+
+
+Select MicroSoft Entra ID 
+
+
+3. Click on it → Click **Open connector page**
+4. Click **Connect** (you may need to grant permissions)
+5. Follow instructions to complete connection
+
+### 🔹 b) Connect Azure Activity Logs
+
+1. Back in **Data connectors**, search **Azure Activity**
+2. Click **Open connector page**
+3. Enable log collection → **Connect**
+
+✅ You are now collecting logs from Defender and Azure.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
