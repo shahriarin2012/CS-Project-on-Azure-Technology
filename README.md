@@ -486,6 +486,267 @@ Select MicroSoft Entra ID
 ✅ You are now collecting logs from Defender and Azure.
 
 
+#---
+
+## 🔔 Step 4: Create a Simple Analytics Rule
+
+### 🔹 Goal: Create an alert for “Phishing Click Event”
+
+1. In Sentinel → Go to **Analytics** (left panel)
+2. Click **+ Create → Scheduled query rule**
+
+
+
+![image](https://github.com/user-attachments/assets/0f765ec8-0ac2-4a8e-918f-7231edac80a8)
+
+
+
+Fill the setup:
+
+### 📝 Rule Details:
+- **Name:** Phishing Click Alert
+- **Severity:** Medium
+- **Tactics:** Initial Access
+
+
+  ![image](https://github.com/user-attachments/assets/4a04aa7a-c66b-49da-add7-a47b77148dfa)
+
+
+  ### 🔍 Set Rule Logic:
+
+In the **Query** section, paste the following sample:
+
+```kusto
+EmailEvents
+| where ThreatType == "Phish" and DeliveryAction == "Clicked"
+```
+
+This is a simple KQL (Kusto Query Language) query that detects phishing click events.
+
+Let's break down the full query line-by-line, explain what each part does, and give context so you can confidently explain it to your faculty.
+
+#### ####### The Full Query:
+
+kusto
+
+EmailEvents
+
+| where ThreatTypes has "Phish"
+
+| where DeliveryAction == "Clicked"
+
+| project TimeGenerated, SenderFromAddress, RecipientEmailAddress, Subject, DeliveryAction, ThreatTypes
+
+📚 Background Concepts You Should Know First
+
+🛡 What is Microsoft Sentinel?
+
+A cloud-native SIEM (Security Information and Event Management) solution from Microsoft.
+It collects and analyzes security data from various sources (like Entra ID, Microsoft 365, firewalls, etc.).
+It helps security teams detect threats, investigate incidents, and respond effectively.
+📦 What is KQL?
+
+Kusto Query Language is used to write queries for analyzing data in Azure Log Analytics and Sentinel.
+It is read-only, meaning you only fetch and analyze data — not modify it.
+📊 What is EmailEvents?
+
+A log table in Sentinel that stores data about email-related events, like deliveries, detections, threats, actions taken, etc.
+When you connect Sentinel with Microsoft Defender for Office 365 (via Entra ID or Microsoft 365), EmailEvents becomes available.
+🔍 Step-by-Step Breakdown of the Query
+
+🔹 Line 1:
+
+kusto
+
+EmailEvents
+
+✅ What it does:
+
+Selects the data source — specifically the EmailEvents table.
+This is your starting point: you’re telling Sentinel, “Look at all email-related events.”
+🔹 Line 2:
+
+kusto
+
+| where ThreatTypes has "Phish"
+
+✅ What it does:
+
+Filters the events to only those where the ThreatTypes column contains the word "Phish" (short for Phishing).
+ThreatTypes is often a list of threat categories (like ["Phish", "Spam", "Malware"]), so we use has instead of ==.
+🧠 Analogy:
+
+Think of ThreatTypes like a "tag cloud" for each email — and you’re asking, “Show me only the emails that have the Phish tag.”
+
+🔹 Line 3:
+
+kusto
+
+| where DeliveryAction == "Clicked"
+
+✅ What it does:
+
+Narrows down further to only those emails that were not just phishing, but where the user actually clicked the malicious link.
+DeliveryAction records what the recipient did or what the email system did (e.g., Clicked, Blocked, Delivered, etc.)
+🎯 Why it’s important:
+
+We're not just looking for phishing — you're targeting phishing incidents where someone fell for it. This makes the alert much more valuable.
+
+🔹 Line 4:
+
+kusto
+
+| project TimeGenerated, SenderFromAddress, RecipientEmailAddress, Subject, DeliveryAction, ThreatTypes
+
+✅ What it does:
+
+Selects specific columns to show in the result.
+project is like saying: “Only show me the columns I care about.”
+🔎 Columns Explained:
+
+Column Name
+
+What It Shows
+
+TimeGenerated
+
+When the event was logged (timestamp)
+
+SenderFromAddress
+
+The email address that sent the email
+
+RecipientEmailAddress
+
+The user who received the email
+
+Subject
+
+The subject line of the phishing email
+
+DeliveryAction
+
+The action taken (e.g., Clicked)
+
+ThreatTypes
+
+The type of threat detected (e.g., Phish, Malware, etc.)
+
+🛑 We’re creating a query that:
+
+Detects phishing emails
+That were delivered
+And clicked by the user (a sign of compromise or risky behavior)
+🎯 Use Case: Alert for “Phishing Click Event”
+
+Now that you’ve got the query, you can:
+
+Test it in the “Logs” section of Sentinel
+Save it as a Detection Rule or Analytics Rule
+Set it to run every X minutes
+Trigger an alert when results are found
+(Optional) Connect to Playbooks for automated response (e.g., send email, disable user, etc.)
+✅ Summary (For Faculty or Project Report)
+
+"This query is used in Microsoft Sentinel to detect instances where a phishing email was not only received, but also clicked by a user — indicating potential compromise. It filters the EmailEvents log for threat type Phish and a delivery action of Clicked, then displays key details like sender, recipient, and timestamp. This helps security teams prioritize high-risk events and respond quickly."
+
+
+
+✅ Goal
+
+We want to create an alert rule in Microsoft Sentinel using the phishing detection query so that:
+
+When a phishing email is clicked, an alert is triggered.
+You (or your SOC analysts) can view the alert, and optionally assign it, investigate, or respond.
+🔧 Step-by-Step: Create an Alert Rule in Sentinel
+
+🧭 1. Go to Microsoft Sentinel
+
+Open the Azure Portal
+Go to Microsoft Sentinel
+Select your Sentinel Workspace
+📈 2. Go to “Analytics”
+
+In the Sentinel workspace:
+
+In the left menu, click Analytics
+Click + Create > Scheduled query rule
+✍️ 3. Fill in the Rule Details
+
+Rule Details Tab
+
+Name: Phishing Click Event Detection
+Description: "Triggers when a phishing email is clicked by a user."
+Severity: Choose High or Medium
+Tactics: Choose Initial Access or Credential Access
+Click Next
+📄 4. Set Up the Query
+
+Set Rule Logic Tab
+
+Query: Paste your working query:
+kusto
+
+
+EmailEvents
+
+| where ThreatTypes has "Phish"
+
+| where DeliveryAction == "Clicked"
+
+| project TimeGenerated, SenderFromAddress, RecipientEmailAddress, Subject, DeliveryAction, ThreatTypes
+
+Lookup data from the last: 1 hour (you can change this)
+Run query every: 5 or 10 minutes
+Click Next
+👥 5. Set Alert Thresholds (Optional)
+
+You can choose how many results must match before the alert fires
+For testing, set:
+Trigger alert: When results > 0
+Click Next
+🧑‍💼 6. Set Incident Settings
+
+Check Create incidents from alerts
+Assign incidents to your SOC analyst group (optional)
+Click Next
+⚙️ 7. Actions (Optional)
+
+If you want to send email notifications or trigger playbooks:
+
+Add Automated response or Email action
+Click Next
+✅ 8. Review + Create
+
+Review all settings
+Click Create
+🔍 How to View Alerts
+
+Go back to Microsoft Sentinel > Incidents
+When a phishing-click event is found, it will show up here
+Click the incident to:
+View full details
+Assign to a group (SOC analyst)
+Investigate or respond
+🧪 How to Simulate or Test It
+
+To simulate a click and trigger the alert:
+
+Send a test phishing email to one of your users
+Have them click the link
+If Defender for Office or your connected data source logs it in EmailEvents, Sentinel will alert
+Alternatively:
+
+Use the Log Analytics workspace
+Insert test data manually (for learning purposes)
+📌 Summary for Your Faculty Report
+
+“We created a scheduled analytics rule in Microsoft Sentinel that continuously monitors email activity logs for phishing emails that users have clicked. This helps detect real security incidents and assigns them to our SOC analyst group for investigation. The rule is based on a custom KQL query that filters the EmailEvents table for ‘Phish’ threats and a ‘Clicked’ action, providing actionable alerts for potential user compromise.”
+
+ 
+
+
+
 
 
 
